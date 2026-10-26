@@ -1,0 +1,392 @@
+/* Selector universal para limpiar márgenes y paddings */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1e293b;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo h2 {
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+/* Cuadrícula de Productos (Diseño Responsivo RWD) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Tarjeta individual */
+.grid-item {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Producto_img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+.Producto_info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.Producto_info h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  font-size: 0.8rem;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.specs strong {
+  color: #334155;
+}
+
+.Producto_footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.Precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.btn-comprar {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-comprar:hover {
+  background: #1d4ed8;
+}
+
+/*Barra lateral de filtros*/
+/* ===== DISTRIBUCIÓN DEL CATÁLOGO ===== */
+
+.catalogo-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 24px auto;
+  padding: 0 24px;
+  flex: 1;
+}
+
+.catalogo-contenido {
+  min-width: 0;
+}
+
+.catalogo-layout .grid {
+  max-width: none;
+  margin: 16px 0;
+  padding: 0;
+}
+
+/* ===== BARRA LATERAL ===== */
+
+.sidebar {
+  align-self: start;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.25rem;
+  color: #1e293b;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filtro label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.filtro select,
+.filtro input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.filtro select:focus,
+.filtro input:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ===== BOTONES DE FILTROS ===== */
+
+.btn-filtro,
+.btn-limpiar,
+.btn-abrir,
+.btn-cerrar {
+  cursor: pointer;
+  font: inherit;
+  border-radius: 6px;
+}
+
+.btn-filtro {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-filtro:hover {
+  background: #1d4ed8;
+}
+
+.btn-limpiar {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-limpiar:hover {
+  background: #f1f5f9;
+}
+
+.btn-abrir,
+.btn-cerrar {
+  display: none;
+  padding: 9px 12px;
+  border: none;
+  background: #1e293b;
+  color: #fff;
+}
+
+.catalogo-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+#contador-productos {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ===== TABLETAS ===== */
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .catalogo-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .sidebar {
+    padding: 16px;
+  }
+
+  .catalogo-layout .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 639px) {
+  .catalogo-layout {
+    display: block;
+    padding: 0 16px;
+    margin: 16px auto;
+  }
+
+  .btn-abrir {
+    display: inline-block;
+  }
+
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(85%, 320px);
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 0;
+    padding: 22px;
+  }
+
+  .sidebar.abierto {
+    display: block;
+  }
+
+  .sidebar-header {
+    margin-bottom: 24px;
+  }
+
+  .btn-cerrar {
+    display: inline-block;
+  }
+
+  .catalogo-layout .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogo-toolbar {
+    flex-wrap: wrap;
+  }
+}
+
+/*  Grafico de Comparativa */
+.grafico-comparativa {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.chart-bar {
+  display: grid;
+  grid-template-columns: 60px 1fr 35px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #334155;
+}
+
+.bar-track {
+  background: #e2e8f0;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bar-fill {
+  background: #2563eb;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.bar-val {
+  text-align: right;
+  font-weight: 600;
+  color: #64748b;
+}

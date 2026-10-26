@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hardware</title>
+    <link rel="stylesheet" href="Estilo_catalago.CSS">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h2>Catálogo de Hardware</h2>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="catalogo-layout">
+
+  <aside class="sidebar" aria-label="Filtros de productos">
+
+    <div class="sidebar-header">
+      <h2>Filtros</h2>
+
+      <button
+        type="button"
+        id="btn-cerrar-filtros"
+        class="btn-cerrar"
+        aria-label="Cerrar filtros">
+        ✕
+      </button>
+    </div>
+
+    <div class="filtro">
+      <label for="categoria">Categoría</label>
+      <select id="categoria">
+        <option value="todos">Todas las categorías</option>
+        <option value="laptop">Laptops</option>
+        <option value="procesador">Procesadores</option>
+        <option value="memoria">Memoria RAM</option>
+        <option value="almacenamiento">Almacenamiento</option>
+        <option value="periferico">Periféricos</option>
+        <option value="gabinete">Gabinetes</option>
+        <option value="monitor">Monitores</option>
+        <option value="impresora">Impresoras</option>
+      </select>
+    </div>
+
+    <div class="filtro">
+      <label for="fabricante">Fabricante</label>
+      <select id="fabricante">
+        <option value="todos">Todos los fabricantes</option>
+        <option value="msi">MSI</option>
+        <option value="acer">Acer</option>
+        <option value="intel">Intel</option>
+        <option value="amd">AMD</option>
+        <option value="kingston">Kingston</option>
+        <option value="thunderobot">Thunderobot</option>
+        <option value="ocelot">Ocelot</option>
+        <option value="zecia">Zecia</option>
+        <option value="lg">LG</option>
+        <option value="epson">Epson</option>
+        <option value="qcy">QCY</option>
+      </select>
+    </div>
+
+    <div class="filtro">
+      <label for="precio-min">Precio mínimo ($)</label>
+      <input
+        type="number"
+        id="precio-min"
+        min="0"
+        placeholder="Ej. 500">
+    </div>
+
+    <div class="filtro">
+      <label for="precio-max">Precio máximo ($)</label>
+      <input
+        type="number"
+        id="precio-max"
+        min="0"
+        placeholder="Ej. 5000">
+    </div>
+
+    <button type="button" id="btn-aplicar" class="btn-filtro">
+      Aplicar filtros
+    </button>
+
+    <button type="button" id="btn-limpiar" class="btn-limpiar">
+      Limpiar filtros
+    </button>
+
+    <div class="filtro grafico-comparativa">
+        <label>Comparativa de Rendimiento (CPU)</label>
+        <div class="chart-container">
+          <div class="chart-bar">
+            <span class="bar-label">Ryzen 7</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 85%;"></div></div>
+            <span class="bar-val">85%</span>
+          </div>
+          <div class="chart-bar">
+            <span class="bar-label">Core i7</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+            <span class="bar-val">90%</span>
+          </div>
+          <div class="chart-bar">
+            <span class="bar-label">Ryzen 5</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
+            <span class="bar-val">65%</span>
+          </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <section class="catalogo-contenido">
+
+    <div class="catalogo-toolbar">
+      <button
+        type="button"
+        id="btn-abrir-filtros"
+        class="btn-abrir">
+        ☰ Mostrar filtros
+      </button>
+
+      <p id="contador-productos" aria-live="polite">
+        12 productos
+      </p>
+    </div>
+
+
+    <main class="grid" aria-label="Productos">
+        <!-- Producto 1 -->
+        <article class="grid-item">
+          <picture>
+            <!-- Imagen Telefono -->
+            <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_NQ_NP_811404-MLA82167781754_022025-O.webp">
+            <!-- Imagen Escritorio -->
+            <img src="https://http2.mlstatic.com/D_NQ_NP_811404-MLA82167781754_022025-O.webp" alt="Laptop msi Thin A15" class="Producto_img" loading="lazy">
+         </picture>
+            <div class="Producto_info">
+                <h3>Laptop msi Thin A15 B7VE</h3>
+                <ul class="specs">
+                    <li><strong>CPU:</strong> AMD Ryzen 7 6800H</li>
+                    <li><strong>RAM:</strong> 16 GB DDR5</li>
+                    <li><strong>Almacenamiento:</strong> 1 TB SSD NVMe</li>
+                </ul>
+                <div class="Producto_footer">
+                        <span class="Precio">$1,499.99</span>
+                        <button class="btn-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="grid-item">
+          <picture>
+               <!-- Imagen Telefono -->
+            <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_NQ_NP_2X_863207-MLA96123686509_102025-F.webp">
+            <!-- Imagen Escritorio -->
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_863207-MLA96123686509_102025-F.webp" alt="Mouse Gamer Thunderobot" class="Producto_img" loading="lazy">
+          </picture>
+            <div class="Producto_info">
+                <h3>Mouse Gamer Inalambrico Thunderobot Ml7 Blanco</h3>
+                <ul class="specs">
+                      <li><strong>Sensor:</strong> PixArt PAW3395 (hasta 26,000 DPI)</li>
+                      <li><strong>Peso:</strong> Aprox. 65 gramos</li>
+                      <li><strong>Conectividad:</strong> Inalámbrico 2.4GHz y Bluetooth</li>
+                      <li><strong>Batería:</strong> 70+ horas de uso</li>
+                </ul>
+                <div class="Producto_footer">
+                        <span class="Precio">$599.99</span>
+                        <button class="btn-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="grid-item">
+            <picture>
+             <!-- Imagen Telefono -->
+            <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_825972-MLA117874205672_102026-F.webp">
+            <!-- Imagen Escritorio -->
+            <img src="https://http2.mlstatic.com/D_Q_NP_825972-MLA117874205672_102026-F.webp" alt="Gabinete Gamer Ocelot" class="Producto_img" loading="lazy">
+          </picture>
+            <div class="Producto_info">
+                <h3>Gabinete Gamer Ocelot Polygon-e5 ATX</h3>
+                <ul class="specs">
+                    <li><strong>Compatible:</strong> Placas ATX, Micro ATX, Mini ITX</li>
+                    <li><strong>Soporta:</strong> Hasta 8 ventiladores de 120 mm</li>
+                    <li><strong>Gráficas:</strong> Hasta 295 mm</li>
+                </ul>
+                <div class="Producto_footer">
+                    <span class="Precio">$949.99</span>
+                    <button class="btn-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+        </article>
+
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_709913-MLA93372844119_092025-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_709913-MLA93372844119_092025-F.webp" alt="Memoria RAM" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Memoria Ram Ddr4 8gb 3200mhz Kingston Fury Beast</h3>
+        <ul class="specs">
+          <li><strong>Cantidad de modulos de RAM:</strong>  1</li>
+          <li><strong>Tecnologia:</strong>  DDR4 SDRAM  </li>
+          <li><strong>Memoria con formato:</strong>  UDIMM</li>
+          <li><strong> Velocidad:</strong>  3200 MHz</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$1,949.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="grid-item">
+      <picture>
+        <!-- Imagen Telefono -->
+        <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_NQ_NP_2X_668550-MLA103756772326_012026-F.webp">
+        <!-- Imagen Escritorio -->
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_668550-MLA103756772326_012026-F.webp" alt="Teclado Mecánico 60% Eje Rojo Alambrico Gamer Español" class="Producto_img" loading="lazy">
+      </picture>
+      <div class="Producto_info">
+        <h3>Teclado Mecánico 60% Eje Rojo Alambrico Gamer Español Zecia Zecia Gamer Spanish Latin American Mechanical Keyboard 60% Black</h3>
+        <ul class="specs">
+          <li><strong>Idioma:</strong>  Español Latino</li>
+          <li><strong>Layout:</strong>  QWERTY </li>
+          <li><strong>Tamaño:</strong>  60%</li>
+          <li><strong> Color de retroiluminación:</strong> RGB</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$488.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_704953-MLU70378060161_072023-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_704953-MLU70378060161_072023-F.webp" alt="Procesador Intel Core I7 12700kf" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Procesador Intel Core I7 12700kf 3.6ghz 12th Gen 8 Núcleos</h3>
+        <ul class="specs">
+          <li><strong>Modelo:</strong>  Intel Core I7 12700kf</li>
+          <li><strong>Memoria cache de:</strong>  25 MB, rapida y volatil</li>
+          <li><strong>Zocalos compatibles:</strong>  LGA1700</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$7530.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_602053-MLA99513908530_112025-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_602053-MLA99513908530_112025-F.webp" alt="Procesador AMD Ryzen 5 3500X" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Procesador AMD Ryzen 5 3500X de 6 Núcleos, con 4.1 GHz y</h3>
+        <ul class="specs">
+          <li><strong>Modelo:</strong>  3500X</li>
+          <li><strong>Memoria cache de:</strong>  32 MB, rapida y volatil</li>
+          <li><strong>Zocalos compatibles:</strong>  AM4</li>
+          <li><strong>Potencia de:</strong>  65 W</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$1279.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_682731-MLA99450928002_112025-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_682731-MLA99450928002_112025-F.webp" alt="Unidad de Estado Solido SSD M.2 1TB KINGSTON NVMe PCIe 4.0 6000/4000 MB/s SNV3S/1000G color azul oscuro" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Unidad de Estado Solido SSD M.2 1TB KINGSTON NVMe PCIe 4.0 6000/4000 MB/s SNV3S/1000G color azul oscuro</h3>
+        <ul class="specs">
+          <li><strong>Interfaz de conexion:</strong>  NVMe PCIe 4.0</li>
+          <li><strong>Velocidad de lectura:</strong>  6000 MB/s</li>
+          <li><strong>Velocidad de escritura:</strong>  4000 MB/s</li>
+          <li><strong>Factor de forma:</strong>  M.2</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$3085.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+    
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_957913-MLA113989719164_072026-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_957913-MLA113989719164_072026-F.webp" alt="Monitor Gamer LG UltraGear de 24" IPS Full HD 144Hz 1ms para FreeSync G-Sync" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Monitor Gamer LG UltraGear de 24" IPS Full HD 144Hz 1ms para FreeSync G-Sync</h3>
+        <ul class="specs">
+          <li><strong>Interfaz de conexion:</strong>  HDMI, DisplayPort</li>
+          <li><strong>Resolucion:</strong>  1920x1080</li>
+          <li><strong>Frecuencia de actualizacion:</strong>  144Hz</li>
+          <li><strong>Voltaje:</strong>  126/220 V</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$2199.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="grid-item">
+      <picture>
+        <!-- Imagen Telefono -->
+        <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_862063-MLM115550501216_082026-F.webp">
+        <!-- Imagen Escritorio -->
+        <img src="https://http2.mlstatic.com/D_Q_NP_862063-MLM115550501216_082026-F.webp" alt="Impresora Epson L3351 Multifuncional Wifi Ecotank Clases" class="Producto_img" loading="lazy">
+      </picture>
+      <div class="Producto_info">
+        <h3>Impresora Epson L3351 Multifuncional Wifi Ecotank Clases</h3>
+        <ul class="specs">
+          <li><strong>Tecnología de impresión:</strong>  Inyeccion de tinta</li>
+          <li><strong>Entrada:</strong>  USB</li>
+          <li><strong>Voltaje:</strong>  110-240 V</li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$5999.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+      <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_717586-MLA100047253573_122025-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_717586-MLA100047253573_122025-F.webp" alt="Audífonos Inalámbricos Qcy H3pro 50db Anc Gamer Diadema Wh" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Audífonos Inalámbricos Qcy H3pro 50db Anc Gamer Diadema Wh</h3>
+        <ul class="specs">
+          <li><strong>Tecnología:</strong>  True Wireless</li>
+          <li><strong>Alcance inalambrico de:</strong>  10 metros</li>
+          <li><strong>Con cancelacion de ruido</strong> </li>
+          <li><strong>Resistencia al agua y al polvo</strong> </li>
+          <li><strong>Clasificacion IP:</strong> IPX5 </li>
+          <li><strong>Bluetooth:</strong> 5.0 </li>
+        </ul>
+        <div class="Producto_footer">
+            <span class="Precio">$1119.00</span>
+            <button class="btn-comprar">Agregar al carrito</button>
+        </div>
+      </div>
+    </article>
+
+       <article class="grid-item">
+        <picture>
+          <!-- Imagen Telefono -->
+          <source media="(max-width: 639px)" srcset="https://http2.mlstatic.com/D_Q_NP_808807-MLA102189523389_122025-F.webp">
+          <!-- Imagen Escritorio -->
+          <img src="https://http2.mlstatic.com/D_Q_NP_808807-MLA102189523389_122025-F.webp" alt="Notebook Acer Nitro V Intel Core I5- 13420h 512gb Ssd 16gb Ddr5" class="Producto_img" loading="lazy">
+        </picture>
+      <div class="Producto_info">
+        <h3>Acer Nitro V Intel Core I5- 13420h 512gb Ssd 16gb Ddr5 </h3>
+        <ul class="specs">
+          <li><strong>Sistema operativo:</strong>  Windows 11 Home</li>
+          <li><strong>Modelo de tarjeta gráfica dedicada:</strong>  Nvidia GeForce RTX 5050</li>
+          <li><strong>Resolucion:</strong>  1920x1080</li>
+        </ul>
+             <div class="Producto_footer">
+                <span class="Precio">$29999.00</span>
+                <button class="btn-comprar">Agregar al carrito</button>
+          </div>
+        </div>
+        </article>
+     </main>
+    </section>
+</div>
+<script src="Script.js"></script>
+</body>
+</html>
